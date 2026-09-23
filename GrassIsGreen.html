@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grass Is Green</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 8px;
+            background-color: #f4f5f2;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #2f3a33;
+        }
+
+        /* Header */
+        header {
+            background-color: #557a5c;
+            color: #ffffff;
+            border-bottom: 4px solid #f2c94c;
+            text-align: center;
+            padding: 24px 20px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 20px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        header .tagline {
+            margin: 0;
+            font-size: 11px;
+            font-style: italic;
+            color: #fff4c2;
+        }
+
+        header hr {
+            width: 100px;
+            border: none;
+            border-top: 1px solid #f2c94c;
+            margin: 10px auto;
+        }
+
+        header .time {
+            margin: 0;
+            font-size: 11px;
+        }
+
+        /* Poster */
+        .poster {
+            text-align: center;
+            margin: 12px 0 20px;
+        }
+
+        .poster img {
+            width: 100%;
+            max-width: 450px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .poster figcaption {
+            margin-top: 10px;
+            font-size: 11px;
+            font-style: italic;
+            color: #557a5c;
+        }
+
+        /* Info boxes */
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .box {
+            padding: 16px 20px 24px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .box h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+        }
+
+        .box p {
+            margin: 0 0 10px;
+        }
+
+        .light {
+            background-color: #ffffff;
+        }
+
+        .grey {
+            background-color: #e6e8e3;
+        }
+
+        .light h2,
+        .grey h2 {
+            color: #557a5c;
+        }
+
+        .green {
+            background-color: #46684d;
+            color: #ffffff;
+        }
+
+        .dark-green {
+            background-color: #34523b;
+            color: #ffffff;
+        }
+
+        .green h2,
+        .dark-green h2,
+        .highlight {
+            color: #f2c94c;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        .box h3 {
+            margin: 0;
+            font-size: 11px;
+            color: #f2c94c;
+        }
+
+        .box a {
+            color: #fff4c2;
+        }
+
+        mark {
+            background-color: #f2c94c;
+            color: #2f3a33;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #557a5c;
+            color: #ffffff;
+            border-top: 4px solid #f2c94c;
+            text-align: center;
+            padding: 16px 20px 20px;
+            font-size: 11px;
+        }
+
+        footer h2 {
+            margin: 0 0 12px;
+            font-size: 16px;
+            color: #f2c94c;
+        }
+
+        footer p {
+            margin: 0 0 12px;
+        }
+
+        footer a {
+            color: #fff4c2;
+        }
+
+        /* Stack the boxes on small screens */
+        @media (max-width: 600px) {
+            .info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GRASS IS GREEN</h1>
+        <p class="tagline">Did you know that grass is green?</p>
+        <hr>
+        <p class="time">0:00 PM &ndash; 23:59 PM &middot; Everywhere in the world, except for Almere and Schiedam</p>
+    </header>
+
+    <figure class="poster">
+        <a href="#">
+            <img src="voi_changing.jpg" alt="Sunlight shining over a green field full of dandelions">
+        </a>
+        <figcaption>Click the image to visit the event website.</figcaption>
+    </figure>
+
+    <main class="info">
+        <section class="box light">
+            <h2>About the Day</h2>
+            <p>Welcome to <strong>Grass Is Green</strong>, a day dedicated to the greenest thing under your feet.</p>
+            <p>Take off your shoes and spend the day <em>relaxing, running and walking on grass</em>.</p>
+            <p>&ldquo;Green grass. Good people. One unforgettable day.&rdquo;</p>
+        </section>
+
+        <section class="box green">
+            <h2>Day Highlights</h2>
+            <h3>LIVE GRASS</h3>
+            <p>Real life grass to put your feet on</p>
+            <h3>PICNIC FIELD</h3>
+            <p>An open field for everyone to run from your crazy nightmares</p>
+            <p>The grass starts growing at 0:00.</p>
+        </section>
+
+        <section class="box grey">
+            <h2>Today's Program</h2>
+            <p><strong>0:00</strong> - Gates Open</p>
+            <p><strong>8:00</strong> - Morning Dew Walk</p>
+            <p><strong>12:00</strong> - Big Picnic</p>
+            <p><strong>18:00</strong> - Sunset on the Grass</p>
+            <p>
+                <strong>Schedule Update:</strong><br>
+                <del>Gates open at 6:00.</del><br>
+                <mark>Gates now open at 0:00.</mark>
+            </p>
+        </section>
+
+        <section class="box dark-green">
+            <h2>Tickets</h2>
+            <p>
+                Early Bird: <del>NT$0000</del><br>
+                <span class="highlight">Special Price: FREE</span>
+            </p>
+            <p>
+                Your ticket includes:<br>
+                Fresh air + Grass to walk on + Youll leave with a big ass smile
+            </p>
+            <p>Only <span class="highlight">8.3 Billion tickets</span> are available.</p>
+            <p><a href="#">Reserve Your Ticket</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <p>
+            Grass Is Green Society<br>
+            1 Meadow Lane, Taipei
+        </p>
+        <p>
+            <a href="mailto:hello@grassisgreen.example">hello@grassisgreen.example</a>
+            &nbsp;|&nbsp;
+            <a href="tel:+886212345678">+886-2-1234-5678</a>
+        </p>
+    </footer>
+
+</body>
+</html>
