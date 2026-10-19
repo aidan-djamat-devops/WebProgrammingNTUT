@@ -23,7 +23,22 @@
             /* selected link */
             a:active {
             color: yellow;
-            } 
+            }
+
+            /* latest homework: move class="latest" to the newest link */
+            a.latest:link,
+            a.latest:visited {
+            color: red;
+            font-weight: bold;
+            }
+            .new-label {
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            margin-left: 6px;
+            }
         </style>
     </head>
     <body>
@@ -41,7 +56,7 @@
         <p>- <a href="classwork/Week-01/mars.html">Week 1 - My Favorite Planet</a></p>
         <p>- <a href="classwork/Week-03/Task3.html">Week 3</a></p>
         <p>- <a href="classwork/Week-04/quokka.html">Week 4 - The Quokka</a></p>
-        <p>- <a href="classwork/Week-04/tokyo.html">Week 4 - Tokyo</a></p>
+        <p>- <a class="latest" href="classwork/Week-04/tokyo.html">Week 4 - Tokyo</a><span class="new-label">LATEST</span></p>
     
     </body>
 </html>
