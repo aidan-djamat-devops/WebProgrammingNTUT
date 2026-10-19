@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Pages</title>
+        <style>
+            body {
+                background-color: #f6f6f3;
+                color: #222222;
+                font-family: "Segoe UI", Arial, sans-serif;
+                margin: 0;
+            }
+
+            /* keep everything in one narrow column in the middle */
+            main {
+                max-width: 560px;
+                margin: 80px auto;
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 40px;
+                margin: 0 0 4px;
+            }
+            .subtitle {
+                color: #777777;
+                margin: 0 0 40px;
+            }
+
+            /* small grey section titles */
+            h2 {
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: #888888;
+                margin: 40px 0 10px;
+            }
+
+            /* list without bullets, with a thin line between items */
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                border-bottom: 1px solid #dddddd;
+            }
+            li:first-child {
+                border-top: 1px solid #dddddd;
+            }
+
+            /* the whole row is clickable */
+            a {
+                display: flex;
+                justify-content: space-between;
+                padding: 14px 4px;
+                color: #222222;
+                text-decoration: none;
+            }
+            a::after {
+                content: "→";
+                color: #bbbbbb;
+            }
+
+            /* mouse over link */
+            a:hover {
+                color: green;
+                padding-left: 10px;
+            }
+            a:hover::after {
+                color: green;
+            }
+
+            /* small grey week label in front of the title */
+            .week {
+                color: #999999;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>My Pages</h1>
+            <p class="subtitle">Web Programming at NTUT</p>
+
+            <h2>Pages</h2>
+            <ul>
+                <li><a href="AidanNFF.html">AidanNFF</a></li>
+                <li><a href="GrassIsGreen.html">Grass Is Green</a></li>
+            </ul>
+
+            <h2>Classwork</h2>
+            <ul>
+                <li><a href="classwork/Week-01/mars.html"><span><span class="week">Week 1</span>My Favorite Planet</span></a></li>
+                <li><a href="classwork/Week-03/Task3.html"><span><span class="week">Week 3</span>Task 3</span></a></li>
+                <li><a href="classwork/Week-04/quokka.html"><span><span class="week">Week 4</span>The Quokka</span></a></li>
+                <li><a href="classwork/Week-04/tokyo.html"><span><span class="week">Week 4</span>Tokyo</span></a></li>
+            </ul>
+        </main>
+    </body>
+</html>

@@ -17,12 +17,20 @@
             font-weight: normal;
         }
 
+        /* Keeps the content in a column in the middle of the page */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
         /* Navigation bar at the top */
-        header {
+        header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         .logo {
             font-size: 22px;
@@ -49,7 +57,7 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 8%;
+            padding: 80px 0;
         }
         .small-title {
             font-size: 12px;
@@ -73,14 +81,16 @@
             line-height: 1.6;
         }
 
-        /* Discover section */
-        .discover {
-            padding: 60px 8%;
+        /* The sections below the big picture */
+        section {
+            padding: 60px 0;
         }
-        .discover h2 {
+        section h2 {
             font-size: 44px;
             margin: 10px 0 30px;
         }
+
+        /* Picture and text next to each other */
         .columns {
             display: flex;
             gap: 40px;
@@ -89,6 +99,7 @@
         .columns div {
             flex: 1;
             line-height: 1.7;
+            font-size: 15px;
         }
         .columns img {
             flex: 1;
@@ -97,43 +108,171 @@
             object-fit: cover;
             border-radius: 4px;
         }
+        .columns .small-title {
+            margin-top: 0;
+        }
         blockquote {
             font-style: italic;
             margin: 20px 0;
+        }
+
+        /* Photo journal: title on the left, hint text on the right */
+        .gallery-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .gallery-top p {
+            max-width: 220px;
+            font-size: 13px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+
+        /* Three photos in a row */
+        .frames {
+            display: flex;
+            gap: 15px;
+        }
+        .frame {
+            position: relative; /* so the overlay can sit on top of the photo */
+            flex: 1;
+            height: 300px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Dark layer with text, invisible until you hover */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            background-color: rgba(20, 20, 30, 0.7);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .frame:hover .overlay {
+            opacity: 1;
+        }
+        .overlay h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: normal;
+            font-size: 22px;
+            margin: 0 0 8px;
+        }
+        .overlay p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .note {
+            font-size: 12px;
+            color: #666666;
         }
     </style>
 </head>
 <body>
     <header>
-        <a class="logo" href="#">TOKYO.</a>
-        <nav>
-            <a href="#discover">DISCOVER</a>
-            <a href="#">NEIGHBORHOODS</a>
-            <a href="#">GALLERY</a>
-        </nav>
+        <div class="container">
+            <a class="logo" href="#">TOKYO.</a>
+            <nav>
+                <a href="#discover">DISCOVER</a>
+                <a href="#neighborhoods">NEIGHBORHOODS</a>
+                <a href="#gallery">GALLERY</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <p class="small-title">A visual journey through Japan</p>
-        <h1>A City of<br>Contrasts.</h1>
-        <hr>
-        <p>Quiet temples, electric streets, and little moments in between. Discover a different side of Tokyo.</p>
+    <div class="hero">
+        <div class="container">
+            <p class="small-title">A visual journey through Japan</p>
+            <h1>A City of<br>Contrasts.</h1>
+            <hr>
+            <p>Quiet temples, electric streets, and little moments in between. Discover a different side of Tokyo.</p>
+        </div>
+    </div>
+
+    <section id="discover">
+        <div class="container">
+            <p class="small-title">01 / Discover</p>
+            <h2>Where tradition meets tomorrow.</h2>
+            <div class="columns">
+                <div>
+                    <p class="small-title">More than a destination</p>
+                    <p>Tokyo is a city that never stops surprising you. One moment, you are surrounded by
+                    bright signs and busy crossings. A few streets away, you might discover a quiet shrine
+                    hidden between modern buildings.</p>
+                    <p>What makes Tokyo special is the way old and new exist side by side. Every
+                    neighborhood has its own rhythm, atmosphere, and story to tell.</p>
+                    <blockquote>"The best way to explore Tokyo is to get a little lost."</blockquote>
+                </div>
+                <img src="../../Screenshot%202026-10-12%20143742.png" alt="Taipei 101 at night with a drone show">
+            </div>
+        </div>
     </section>
 
-    <section class="discover" id="discover">
-        <p class="small-title">01 / Discover</p>
-        <h2>Where tradition meets tomorrow.</h2>
-        <div class="columns">
-            <div>
-                <p class="small-title">More than a destination</p>
-                <p>Tokyo is a city that never stops surprising you. One moment, you are surrounded by
-                bright signs and busy crossings. A few streets away, you might discover a quiet shrine
-                hidden between modern buildings.</p>
-                <p>What makes Tokyo special is the way old and new exist side by side. Every
-                neighborhood has its own rhythm, atmosphere, and story to tell.</p>
-                <blockquote>"The best way to explore Tokyo is to get a little lost."</blockquote>
+    <section id="neighborhoods">
+        <div class="container">
+            <p class="small-title">02 / Neighborhoods</p>
+            <h2>Slow down. Look closer.</h2>
+            <div class="columns">
+                <img src="../../voi_changing.jpg" alt="Picture for the neighborhoods section">
+                <div>
+                    <p class="small-title">The quieter side</p>
+                    <p>Beyond the crowded stations and famous landmarks, Tokyo is full of peaceful
+                    corners. Small cafés, traditional shops, and narrow streets invite visitors to
+                    take their time.</p>
+                    <p>Spend an afternoon walking without a strict plan. Notice the details: wooden
+                    doors, warm lanterns, tiny gardens, and the everyday life happening all around you.</p>
+                    <p>Sometimes the most memorable places are the ones you never planned to visit.</p>
+                </div>
             </div>
-            <img src="../../Poster.jpg" alt="Picture for the discover section">
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <p class="small-title">03 / Photo Journal</p>
+            <div class="gallery-top">
+                <h2>Tokyo in three frames.</h2>
+                <p>Move your mouse over each photograph to reveal the story behind the image.</p>
+            </div>
+            <div class="frames">
+                <div class="frame">
+                    <img src="../../Screenshot%202026-05-07%20221324.png" alt="Video call with a map of Taipei">
+                    <div class="overlay">
+                        <h3>Finding the Way</h3>
+                        <p>Planning the route across the city together with friends.</p>
+                    </div>
+                </div>
+                <div class="frame">
+                    <img src="../../voi_changing.jpg" alt="Nature photo">
+                    <div class="overlay">
+                        <h3>The Mountains</h3>
+                        <p>Just outside the city, the view opens up to hills and sky.</p>
+                    </div>
+                </div>
+                <div class="frame">
+                    <img src="../../Screenshot%202026-10-12%20143742.png" alt="Taipei 101 at night with a drone show">
+                    <div class="overlay">
+                        <h3>The Night</h3>
+                        <p>Drones and fireworks light up the sky around Taipei 101.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="note">Hover over a photo to see the fade-in overlay effect.</p>
         </div>
     </section>
 </body>
