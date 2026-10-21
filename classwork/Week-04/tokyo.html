@@ -181,6 +181,52 @@
             font-size: 12px;
             color: #666666;
         }
+
+        /* Itinerary and budget tables */
+        .intro {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-bottom: 70px;
+        }
+        th, td {
+            border: 1px solid #d8d6d1;
+            padding: 18px;
+            text-align: left;
+        }
+        th {
+            background-color: #1f2a26;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        td {
+            background-color: #eae8e4;
+        }
+        tr:nth-child(odd) td {
+            background-color: #e4e2de;
+        }
+        /* first column with the day or category */
+        tr td.label {
+            background-color: #dddad5;
+            font-weight: 600;
+        }
+        /* the cell that covers a whole day */
+        tr td.highlight {
+            background-color: #e6d6d0;
+            color: #a0453a;
+            font-weight: 600;
+            text-align: center;
+        }
+        td.price {
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -191,6 +237,7 @@
                 <a href="#discover">DISCOVER</a>
                 <a href="#neighborhoods">NEIGHBORHOODS</a>
                 <a href="#gallery">GALLERY</a>
+                <a href="#plan">PLAN</a>
             </nav>
         </div>
     </header>
@@ -273,6 +320,69 @@
                 </div>
             </div>
             <p class="note">Hover over a photo to see the fade-in overlay effect.</p>
+        </div>
+    </section>
+
+    <section id="plan">
+        <div class="container">
+            <p class="small-title">04 / Plan</p>
+            <h2>Three Days in Tokyo.</h2>
+            <p class="intro">Plan your mornings, afternoons, and evenings with this simple three-day itinerary.</p>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Morning</th>
+                    <th>Afternoon</th>
+                    <th>Evening</th>
+                </tr>
+                <tr>
+                    <td class="label">Day 1</td>
+                    <td>Asakusa Temple</td>
+                    <td>Ueno Park</td>
+                    <td>Shibuya</td>
+                </tr>
+                <tr>
+                    <td class="label">Day 2</td>
+                    <td>Meiji Shrine</td>
+                    <td>Harajuku</td>
+                    <td>Shinjuku</td>
+                </tr>
+                <tr>
+                    <td class="label">Day 3</td>
+                    <!-- colspan makes a cell go across more than one column -->
+                    <td class="highlight" colspan="2">Tokyo DisneySea</td>
+                    <td>Odaiba</td>
+                </tr>
+            </table>
+
+            <h2>Travel Budget</h2>
+            <p class="intro">A sample budget for transportation and meals in Tokyo.</p>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Item</th>
+                    <th>Estimated Cost</th>
+                </tr>
+                <tr>
+                    <!-- rowspan makes a cell go down over more than one row -->
+                    <td class="label" rowspan="2">Transportation</td>
+                    <td>Metro</td>
+                    <td class="price">¥1,000</td>
+                </tr>
+                <tr>
+                    <td>Train</td>
+                    <td class="price">¥1,500</td>
+                </tr>
+                <tr>
+                    <td class="label" rowspan="2">Food</td>
+                    <td>Lunch</td>
+                    <td class="price">¥1,200</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td class="price">¥2,000</td>
+                </tr>
+            </table>
         </div>
     </section>
 </body>

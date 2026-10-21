@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Timetable</title>
+    <style>
+        body {
+            background-color: #e8e8e8;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+            margin: 40px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 150px;
+            height: 90px;
+            border: 1px solid #f2f2f2;
+            font-size: 22px;
+            text-align: center;
+            vertical-align: top;
+            padding-top: 10px;
+        }
+        /* dark header cells (days and times) */
+        th {
+            background-color: #3d3d3d;
+            color: #eeeeee;
+        }
+        /* first row of lessons is a bit darker than the second */
+        .row1 td {
+            background-color: #c4c4c4;
+        }
+        .row2 td {
+            background-color: #d6d6d6;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+        </tr>
+        <tr class="row1">
+            <th>1pm</th>
+            <td>Math</td>
+            <td>Science</td>
+            <td>Art</td>
+        </tr>
+        <tr class="row2">
+            <th>2pm</th>
+            <td>Science</td>
+            <td>Writing</td>
+            <td>Reading</td>
+        </tr>
+    </table>
+</body>
+</html>

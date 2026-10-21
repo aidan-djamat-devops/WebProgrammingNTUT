@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 - Class Schedule</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Verdana, Arial, sans-serif;
+            margin: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 760px;
+        }
+        th, td {
+            border: 2px solid #ffffff;
+            height: 44px;
+            text-align: center;
+            color: #555555;
+            font-size: 15px;
+        }
+
+        /* dark header row */
+        th {
+            background-color: #4a4a4a;
+            color: #eeeeee;
+            font-weight: normal;
+            font-size: 17px;
+        }
+
+        /* time column */
+        td.time {
+            width: 120px;
+            background-color: #cfcfcf;
+        }
+
+        /* striped rows: light and dark grey after each other */
+        tr:nth-child(even) td {
+            background-color: #c9c9c9;
+        }
+        tr:nth-child(odd) td {
+            background-color: #dddddd;
+        }
+        tr:nth-child(even) td.time {
+            background-color: #c4c4c4;
+        }
+        tr:nth-child(odd) td.time {
+            background-color: #e2e2e2;
+        }
+
+        /* coloured lessons: "tr td.x" is as specific as the stripe rules, and comes last, so it wins */
+        tr td.business {
+            background-color: #c5d6a6;
+        }
+        tr td.math {
+            background-color: #c8d3e0;
+        }
+        tr td.physics {
+            background-color: #f0b58f;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+        </tr>
+        <tr>
+            <td class="time">7:30 AM</td>
+            <td>Breakfast</td>
+            <td>Breakfast</td>
+            <td>Breakfast</td>
+        </tr>
+        <tr>
+            <td class="time">8:00 AM</td>
+            <!-- rowspan makes a cell go down over more than one row -->
+            <td class="business" rowspan="2">Business: Lecture<br>Bldg B, Rm 256</td>
+            <td class="physics" rowspan="3">Physics: Lab<br>Bldg J, Rm 309</td>
+            <td class="business" rowspan="2">Business: Lecture<br>Bldg B, Rm 256</td>
+        </tr>
+        <tr>
+            <td class="time">8:30 AM</td>
+        </tr>
+        <tr>
+            <td class="time">9:00 AM</td>
+            <td class="math" rowspan="2">Applied Math<br>Bldg H, Rm 100</td>
+            <td class="math" rowspan="2">Applied Math<br>Bldg H, Rm 100</td>
+        </tr>
+        <tr>
+            <td class="time">9:30 AM</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time">10:00 AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time">10:30 AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time">11:00 AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="time">11:30 AM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
