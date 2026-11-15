@@ -11,7 +11,7 @@ body {
   line-height: 1.6;          /* extra space between lines for readability */
 }
 
-h1, h2, h3 {
+h1, h2 {
   line-height: 1.25;
 }
 
@@ -115,24 +115,7 @@ main {
   transform: translateY(-2px);
 }
 
-.card h3 {
-  margin-top: 15px;
-  color: #2F6F5E;
-}
-
-/* ----- 6. The 2x2 grid (CSS grid) ----- */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 equal columns */
-  grid-template-rows: auto auto;  /* 2 rows */
-  gap: 20px;
-}
-
-.grid .card {
-  margin-bottom: 0;
-}
-
-/* ----- 7. Buttons ----- */
+/* ----- 6. Buttons ----- */
 button {
   background-color: #2F6F5E;
   color: #FFFFFF;
@@ -149,7 +132,7 @@ button:hover {
   background-color: #24564A;
 }
 
-/* ----- 8. Budget calculator ----- */
+/* ----- 7. Budget calculator ----- */
 .calculator label {
   display: block;
   margin-top: 12px;
@@ -183,73 +166,7 @@ button:hover {
   display: block;
 }
 
-.error {
-  color: #B00020;
-}
-
-/* ----- 9. Table ----- */
-table {
-  width: 100%;
-  border-collapse: collapse; /* no double borders */
-  background-color: #FFFFFF;
-}
-
-th, td {
-  border: 1px solid #DDDDDD;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #2F6F5E;
-  color: #FFFFFF;
-}
-
-/* Every second row gets a light color so rows are easier to follow */
-tr:nth-child(even) {
-  background-color: #F3F6F4;
-}
-
-/* ----- 10. Mandarin flashcards ----- */
-.flashcard {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.chinese {
-  font-size: 56px;
-  margin: 0;
-}
-
-.pinyin {
-  font-size: 24px;
-  color: #2F6F5E;
-  margin: 10px 0 0 0;
-}
-
-.english {
-  font-size: 20px;
-  margin: 5px 0 0 0;
-}
-
-/* JavaScript adds or removes this class to hide/show the back of the card */
-.hidden {
-  display: none;
-}
-
-.counter {
-  color: #666666;
-  margin-top: 20px;
-}
-
-.card-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* ----- 11. Footer ----- */
+/* ----- 8. Footer ----- */
 footer {
   background-color: #222222;
   color: #DDDDDD;
@@ -257,24 +174,4 @@ footer {
   padding: 20px;
   margin-top: 40px;
   font-size: 15px;
-}
-
-footer a {
-  color: #9FD3C3;
-}
-
-/* ----- 12. Mobile: one simple media query ----- */
-/* On screens smaller than 700px the grid becomes 1 column */
-@media (max-width: 700px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  header h1 {
-    font-size: 26px;
-  }
-
-  .chinese {
-    font-size: 44px;
-  }
 }
