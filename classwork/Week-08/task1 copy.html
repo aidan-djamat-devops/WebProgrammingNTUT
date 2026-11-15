@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adding Paragraphs</title>
+	<style>
+		body {
+			max-width: 900px;
+			margin: 40px auto;
+			padding: 0 24px;
+			color: #222;
+			font: 16px/1.5 Arial, sans-serif;
+		}
+
+		h1 { color: #315d50; }
+
+		.panel {
+			margin: 24px 0;
+			padding: 20px;
+			border: 1px solid #bbb;
+			border-radius: 6px;
+			background: #f7f7f7;
+		}
+
+		button {
+			padding: 10px 16px;
+			border: 0;
+			border-radius: 4px;
+			background: #315d50;
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+		}
+
+		button:hover { background: #24463c; }
+		#paragraphs p { margin: 8px 0; }
+		table { width: 100%; border-collapse: collapse; }
+		th, td { padding: 10px; border-bottom: 1px solid #ccc; text-align: left; }
+		th { background: #e8eee9; }
+		.note { color: #666; }
+		#feature-image { display: block; width: min(100%, 340px); margin: 20px 0 10px; }
+		#feature-image.with-border { border: 4px solid #315d50; }
+	</style>
+</head>
+<body>
+	<h1 id="welcome-heading">Nice to meet you!</h1>
+
+	<section class="panel" aria-label="Picture controls">
+		<img id="feature-image" src="../../Aidan_pictures/LaptopSelfie_WebProgramming.jpg" alt="Laptop selfie">
+		<button type="button" onclick="toggleImageBorder()">Add/Remove Border</button>
+		<button type="button" onclick="changeTextColor()">Change Text Color</button>
+	</section>
+
+	<h2>Adding Paragraphs</h2>
+
+	<section class="panel" aria-labelledby="instructions-heading">
+		<h2 id="instructions-heading">Instructions</h2>
+		<ol>
+			<li>Complete the <code>addParagraph()</code> function to display the number of elements in <code>x</code> and <code>y</code> using <code>innerHTML</code>.</li>
+			<li>Click the <strong>Add Paragraph</strong> button several times.</li>
+			<li>Observe how the two numbers change.</li>
+		</ol>
+	</section>
+
+	<section class="panel" aria-label="Paragraph counter exercise">
+		<div id="paragraphs">
+			<p class="intro">Hello</p>
+			<p class="intro">World</p>
+			<p class="note">Goodbye</p>
+		</div>
+		<button type="button" onclick="addParagraph()">Add Paragraph</button>
+		<p id="result1" aria-live="polite"></p>
+		<p id="result2" aria-live="polite"></p>
+	</section>
+
+	<section class="panel" aria-label="Click count results">
+		<table>
+			<thead>
+				<tr>
+					<th>Button Clicks</th>
+					<th>querySelectorAll</th>
+					<th>getElementsByClassName</th>
+				</tr>
+			</thead>
+			<tbody id="results-table"></tbody>
+		</table>
+	</section>
+
+	<section class="panel" aria-label="Canvas circle">
+		<h2>Circle on a Canvas</h2>
+		<canvas id="circle-canvas" width="200" height="100" style="border: 1px solid #d3d3d3;">
+			Your browser does not support the HTML canvas tag.
+		</canvas>
+	</section>
+
+	<section class="panel" aria-label="Overlapping rectangles">
+		<h2>Overlapping Rectangles</h2>
+		<canvas id="rectangle-canvas" width="320" height="160" style="border: 1px solid #d3d3d3;">
+			Your browser does not support the HTML canvas tag.
+		</canvas>
+	</section>
+
+	<script>
+		const x = document.querySelectorAll(".intro");
+		const y = document.getElementsByClassName("intro");
+		let buttonClicks = 0;
+		let coloredText = false;
+
+		function toggleImageBorder() {
+			document.getElementById("feature-image").classList.toggle("with-border");
+		}
+
+		function changeTextColor() {
+			coloredText = !coloredText;
+			document.getElementById("welcome-heading").style.color = coloredText ? "#c0392b" : "#315d50";
+		}
+
+		const canvas = document.getElementById("circle-canvas");
+		const context = canvas.getContext("2d");
+		context.beginPath();
+		context.arc(100, 50, 35, 0, 2 * Math.PI);
+		context.stroke();
+
+		const rectangleCanvas = document.getElementById("rectangle-canvas");
+		const rectangleContext = rectangleCanvas.getContext("2d");
+		rectangleContext.fillStyle = "rgba(255, 0, 0, 0.8)";
+		rectangleContext.fillRect(0, 0, 158, 80);
+		rectangleContext.fillStyle = "rgba(70, 80, 210, 0.7)";
+		rectangleContext.fillRect(53, 32, 158, 80);
+
+		function addParagraph() {
+			const paragraph = document.createElement("p");
+			paragraph.className = "intro";
+			paragraph.innerHTML = "New Paragraph";
+			document.getElementById("paragraphs").appendChild(paragraph);
+
+			buttonClicks++;
+			document.getElementById("result1").innerHTML =
+				"querySelectorAll count: " + x.length;
+			document.getElementById("result2").innerHTML =
+				"getElementsByClassName count: " + y.length;
+
+			const row = document.createElement("tr");
+			row.innerHTML = "<td>" + buttonClicks + "</td><td>" + x.length +
+				"</td><td>" + y.length + "</td>";
+			document.getElementById("results-table").appendChild(row);
+		}
+	</script>
+</body>
+</html>

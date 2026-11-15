@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            background-color: #ecebe8;
+            color: #2b2626;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid #d8d6d1;
+            padding: 12px 16px;
+            text-align: center;
+            background-color: #eae8e4;
+        }
+
+        /* striped rows */
+        tr:nth-child(even) td {
+            background-color: #dddad5;
+        }
+
+        /* highlight the cell under the mouse */
+        tr td:hover {
+            background-color: #1f2a26;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Table</h1>
+
+    <!-- empty table, the script fills it -->
+    <table id="table"></table>
+
+    <script>
+        let html = "";
+
+        // 9 rows: the second number goes from 1 to 9
+        for (let i = 1; i <= 9; i++) {
+            html += "<tr>";
+
+            // 8 columns: the first number goes from 2 to 9
+            for (let j = 2; j <= 9; j++) {
+                html += "<td>" + j + " × " + i + " = " + (j * i) + "</td>";
+            }
+
+            html += "</tr>";
+        }
+
+        document.getElementById("table").innerHTML = html;
+    </script>
+</body>
+</html>
