@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | A Day in My Life in Taipei</title>
+  <!-- One shared stylesheet for all pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER: same on every page -->
+  <header>
+    <h1>A Day in My Life in Taipei</h1>
+    <p>An exchange student's guide to living in Taipei</p>
+  </header>
+
+  <!-- NAVIGATION: same on every page, "active" marks the current page -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="neighborhood.html">My Neighborhood</a></li>
+      <li><a href="food.html">Food &amp; 7-Eleven</a></li>
+      <li><a href="active.html">Active Taipei</a></li>
+      <li><a href="mandarin.html">Learn Mandarin</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT of this page -->
+  <main>
+
+    <!-- Intro about me -->
+    <section>
+      <h2>Hii, welcome to my life and guide!</h2>
+      <img src="images/me-in-taipei.jpg" alt="Me standing on a street in Taipei with shop signs behind me">
+      <p>
+        I am an IT student from the Netherlands and I am doing an exchange semester at
+        <a href="https://www.ntut.edu.tw/" target="_blank">National Taipei University of Technology (Taipei Tech)</a>.
+        I live in Wanhua, the old part of Taipei around Longshan Temple.
+      </p>
+      <p>
+        When I arrived I had no idea where to eat, how to get around or what to say at the
+        7-Eleven counter. I made this website so other exchange students can see what a normal
+        day here looks like and settle in faster than I did.
+      </p>
+    </section>
+
+    <!-- Overview of the other pages -->
+    <section>
+      <h2>What you will find here</h2>
+      <ul>
+        <li><a href="neighborhood.html">My Neighborhood</a> - life around Longshan Temple in Wanhua</li>
+        <li><a href="food.html">Food &amp; 7-Eleven</a> - where I eat and what it costs</li>
+        <li><a href="active.html">Active Taipei</a> - running, skating and getting around</li>
+        <li><a href="mandarin.html">Learn Mandarin</a> - survival phrases with flashcards</li>
+      </ul>
+    </section>
+
+    <!-- Budget calculator (JavaScript feature 1) -->
+    <section>
+      <h2>What it costs to live here</h2>
+      <p>
+        Taipei is cheaper than most Dutch cities, especially food. Fill in your own monthly
+        costs in euros and click the button to see your total in euros and Taiwan dollars (NTD).
+      </p>
+
+      <div class="card calculator">
+        <label for="rent">Rent (EUR per month)</label>
+        <input type="number" id="rent" value="400" min="0">
+
+        <label for="food">Food (EUR per month)</label>
+        <input type="number" id="food" value="300" min="0">
+
+        <label for="transport">Transport: MRT, bus, YouBike (EUR per month)</label>
+        <input type="number" id="transport" value="30" min="0">
+
+        <label for="phone">Phone plan (EUR per month)</label>
+        <input type="number" id="phone" value="15" min="0">
+
+        <!-- onclick calls the calculateBudget() function in script.js -->
+        <button onclick="calculateBudget()">Calculate my budget</button>
+
+        <!-- JavaScript writes the result in here -->
+        <div id="budget-result" class="result"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER: same on every page -->
+  <footer>
+    <p>Made by Aidan, Dutch exchange student at Taipei Tech &middot; Web Programming Midterm 2026</p>
+  </footer>
+
+  <!-- JavaScript file, loaded at the end so the HTML exists first -->
+  <script src="script.js"></script>
+</body>
+</html>
