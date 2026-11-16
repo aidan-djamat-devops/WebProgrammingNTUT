@@ -39,6 +39,11 @@ img {
   border-radius: 6px;
 }
 
+/* Wide photos that fill the whole page width get more height */
+.photo-large {
+  height: 420px;
+}
+
 /* Header */
 header {
   background-color: #2F6F5E;
