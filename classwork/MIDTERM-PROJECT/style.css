@@ -181,6 +181,11 @@ button:hover {
   display: block;
 }
 
+/* Red error text (used by the budget calculator) */
+.error {
+  color: #B00020;
+}
+
 /* Table */
 table {
   width: 100%;
@@ -201,6 +206,72 @@ th {
 
 tr:nth-child(even) {
   background-color: #F3F6F4;
+}
+
+/* Quiz: each question card has a grey line on the left */
+.question {
+  border-left: 5px solid #DDDDDD;
+}
+
+.question-title {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+/* Every answer on its own line */
+.question label {
+  display: block;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.question label:hover {
+  color: #2F6F5E;
+}
+
+.question input {
+  margin-right: 8px;
+  accent-color: #2F6F5E; /* jade green radio buttons */
+}
+
+.feedback {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+/* JavaScript adds "correct" or "wrong" to a question after checking */
+.question.correct {
+  border-left-color: #2F6F5E;
+  background-color: #EEF6F2;
+}
+
+.question.correct .feedback {
+  color: #2F6F5E;
+}
+
+.question.wrong {
+  border-left-color: #B00020;
+  background-color: #FDF0F1;
+}
+
+.question.wrong .feedback {
+  color: #B00020;
+}
+
+/* Quiz buttons next to each other */
+.quiz-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Grey "Try again" button */
+.button-grey {
+  background-color: #777777;
+}
+
+.button-grey:hover {
+  background-color: #555555;
 }
 
 /* Footer */
