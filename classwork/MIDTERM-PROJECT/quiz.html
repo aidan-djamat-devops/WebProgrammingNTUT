@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighborhood Quiz | A Day in My Life in Taipei</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>A Day in My Life in Taipei</h1>
+    <p>An exchange student's guide to living in Taipei</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="neighborhood.html">My Neighborhood</a></li>
+      <li><a href="food.html">Food & 7-Eleven</a></li>
+      <li><a href="active.html">Active Taipei</a></li>
+      <li><a href="quiz.html" class="active">Neighborhood Quiz</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section>
+      <h2>How well do you know Wanhua?</h2>
+      <p>
+        Test what you learned about my neighborhood. Pick one answer per question and click
+        <strong>Check my answers</strong>. Not sure? Read the
+        <a href="neighborhood.html">My Neighborhood</a> page first.
+      </p>
+    </section>
+
+    <!-- Quiz JS FEATURE: every question is a card. Radio buttons with the same name
+         belong together, so you can only pick one answer per question. -->
+    <section>
+
+      <div class="card question" id="question1">
+        <p class="question-title">1. Which famous temple is in my neighborhood?</p>
+        <label><input type="radio" name="q1" value="a"> Confucius Temple</label>
+        <label><input type="radio" name="q1" value="b"> Longshan Temple</label>
+        <label><input type="radio" name="q1" value="c"> Xingtian Temple</label>
+        <!-- JavaScript writes "Correct!" or the right answer in here -->
+        <p class="feedback" id="feedback1"></p>
+      </div>
+
+      <div class="card question" id="question2">
+        <p class="question-title">2. What is the name of the district I live in?</p>
+        <label><input type="radio" name="q2" value="a"> Xinyi</label>
+        <label><input type="radio" name="q2" value="b"> Da'an</label>
+        <label><input type="radio" name="q2" value="c"> Wanhua</label>
+        <p class="feedback" id="feedback2"></p>
+      </div>
+
+      <div class="card question" id="question3">
+        <p class="question-title">3. Which MRT line takes me from Longshan Temple to Taipei Tech?</p>
+        <label><input type="radio" name="q3" value="a"> The blue line</label>
+        <label><input type="radio" name="q3" value="b"> The red line</label>
+        <label><input type="radio" name="q3" value="c"> The green line</label>
+        <p class="feedback" id="feedback3"></p>
+      </div>
+
+      <div class="card question" id="question4">
+        <p class="question-title">4. What can you find on almost every corner in Wanhua?</p>
+        <label><input type="radio" name="q4" value="a"> A Starbucks</label>
+        <label><input type="radio" name="q4" value="b"> A 7-Eleven</label>
+        <label><input type="radio" name="q4" value="c"> A bookshop</label>
+        <p class="feedback" id="feedback4"></p>
+      </div>
+
+      <div class="card question" id="question5">
+        <p class="question-title">5. What is the best thing to do after a long day of skating?</p>
+        <label><input type="radio" name="q5" value="a"> A foot massage on the massage street</label>
+        <label><input type="radio" name="q5" value="b"> Karaoke all night</label>
+        <label><input type="radio" name="q5" value="c"> A swim in the river</label>
+        <p class="feedback" id="feedback5"></p>
+      </div>
+
+      <!-- Each button calls a function in script.js -->
+      <div class="quiz-buttons">
+        <button onclick="checkQuiz()">Check my answers</button>
+        <button onclick="resetQuiz()" class="button-grey">Try again</button>
+      </div>
+
+      <!-- JavaScript writes the score in here -->
+      <div id="quiz-result" class="result"></div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made by Aidan, Dutch exchange student at Taipei Tech - Web Programming Midterm 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
