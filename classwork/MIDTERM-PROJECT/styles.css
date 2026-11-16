@@ -1,22 +1,23 @@
+/* Basic page settings */
 * {
-  box-sizing: border-box; /* padding and border are included in the width */
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: #FAFAF7; /* soft off-white background */
-  color: #222222;            /* dark grey text, easier on the eyes than pure black */
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif; /* one clean sans-serif font */
+  background-color: #FAFAF7;
+  color: #222222;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   font-size: 17px;
-  line-height: 1.6;          /* extra space between lines for readability */
+  line-height: 1.6;
 }
 
-h1, h2 {
+h1, h2, h3 {
   line-height: 1.25;
 }
 
 h2 {
-  color: #2F6F5E; /* jade green headings */
+  color: #2F6F5E;
   margin-top: 40px;
 }
 
@@ -28,17 +29,17 @@ a:hover {
   color: #24564A;
 }
 
-/* Images fill their box. The light background shows if a photo is still missing. */
+/* Images: grey box shows while a photo is missing */
 img {
   display: block;
   width: 100%;
   height: 240px;
-  object-fit: cover; /* crop the photo instead of stretching it */
+  object-fit: cover;
   background-color: #E6ECE9;
   border-radius: 6px;
 }
 
-/* ----- 2. Header ----- */
+/* Header */
 header {
   background-color: #2F6F5E;
   color: #FFFFFF;
@@ -56,18 +57,18 @@ header p {
   opacity: 0.9;
 }
 
-/* ----- 3. Navigation menu (flexbox) ----- */
+/* Navigation (flexbox) */
 nav {
   background-color: #FFFFFF;
   border-bottom: 1px solid #DDDDDD;
 }
 
 nav ul {
-  display: flex;            /* put the links next to each other */
-  justify-content: center;  /* center them horizontally */
-  flex-wrap: wrap;          /* allow wrapping on small screens */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 5px;
-  list-style: none;         /* remove the bullet points */
+  list-style: none;
   margin: 0;
   padding: 10px;
 }
@@ -80,42 +81,57 @@ nav a {
   text-decoration: none;
 }
 
-/* Hover effect for the nav links */
 nav a:hover {
   background-color: #E6ECE9;
   color: #24564A;
 }
 
-/* The page you are on gets the class "active" in the HTML */
+/* Current page in the nav */
 nav a.active {
   background-color: #2F6F5E;
   color: #FFFFFF;
 }
 
-/* ----- 4. Main content area ----- */
+/* Main content area */
 main {
-  max-width: 900px;  /* keep lines from getting too long */
-  margin: 0 auto;    /* center the content */
+  max-width: 900px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-/* ----- 5. Cards (white boxes) ----- */
+/* Cards */
 .card {
   background-color: #FFFFFF;
   border: 1px solid #DDDDDD;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
-  transition: box-shadow 0.2s, transform 0.2s; /* smooth hover animation */
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
-/* Hover effect: the card lifts up a little */
 .card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
-/* ----- 6. Buttons ----- */
+.card h3 {
+  margin-top: 15px;
+  color: #2F6F5E;
+}
+
+/* 2x2 grid (CSS grid) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.grid .card {
+  margin-bottom: 0;
+}
+
+/* Buttons */
 button {
   background-color: #2F6F5E;
   color: #FFFFFF;
@@ -124,15 +140,14 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   font-family: inherit;
-  cursor: pointer; /* show a hand when hovering */
+  cursor: pointer;
 }
 
-/* Hover effect for buttons */
 button:hover {
   background-color: #24564A;
 }
 
-/* ----- 7. Budget calculator ----- */
+/* Budget calculator */
 .calculator label {
   display: block;
   margin-top: 12px;
@@ -152,7 +167,7 @@ button:hover {
   margin-top: 20px;
 }
 
-/* The result box is hidden until JavaScript adds the class "show" */
+/* Result box: hidden until JavaScript adds "show" */
 .result {
   display: none;
   margin-top: 20px;
@@ -166,7 +181,29 @@ button:hover {
   display: block;
 }
 
-/* ----- 8. Footer ----- */
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+}
+
+th, td {
+  border: 1px solid #DDDDDD;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #2F6F5E;
+  color: #FFFFFF;
+}
+
+tr:nth-child(even) {
+  background-color: #F3F6F4;
+}
+
+/* Footer */
 footer {
   background-color: #222222;
   color: #DDDDDD;
@@ -174,4 +211,15 @@ footer {
   padding: 20px;
   margin-top: 40px;
   font-size: 15px;
+}
+
+/* Mobile: grid becomes 1 column */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
 }
